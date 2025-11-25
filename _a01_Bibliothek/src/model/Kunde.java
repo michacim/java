@@ -11,4 +11,11 @@ public class Kunde extends Person{
     public String getKnNr() {
         return knNr;
     }
+
+    @Override
+    public String toString() {
+        return "Kunde{" +
+                "knNr='" + knNr + '\'' +
+                "} " + super.toString();
+    }
 }

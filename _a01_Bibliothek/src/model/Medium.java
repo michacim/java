@@ -52,4 +52,13 @@ public abstract class Medium  implements Ausleihbar{
         this.verfuegbar=true;
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Medium{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", verfuegbar=" + verfuegbar +
+                '}';
+    }
 }
