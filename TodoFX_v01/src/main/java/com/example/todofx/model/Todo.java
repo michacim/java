@@ -10,6 +10,11 @@ public class Todo {
     private State state = State.OPEN;
 
 
+    public Todo(int id, String task) {
+        this.id = id;
+        this.task = task;
+    }
+
     public Todo(int id, String task, LocalDate deadline, State state) {
         this.id = id;
         this.task = task;
