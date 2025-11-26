@@ -1,9 +1,11 @@
-package com.example.hellofx;
+package com.example.hellofx.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 public class HelloController {
 
@@ -22,6 +24,9 @@ public class HelloController {
     void initialize(){
         //wird nach den Konstruktor aufgerufen
         System.out.println("init...");
+
+
+
     }
 
 }

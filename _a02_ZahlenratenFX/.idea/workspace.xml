@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="35e0fa38-a0d5-49a7-ac92-da5596315b33" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../_02_hellofx/src/main/resources/com/example/hellofx/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../_02_hellofx/src/main/resources/com/example/hellofx/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_a01_Bibliothek/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_a01_Bibliothek/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_a01_Bibliothek/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_a01_Bibliothek/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_a01_Bibliothek/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_a01_Bibliothek/_a01_Bibliothek.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_a01_Bibliothek/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_a01_Bibliothek/src/model/Ausleihbar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_a01_Bibliothek/src/model/Ausleihe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_a01_Bibliothek/src/model/Bibliothek.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_a01_Bibliothek/src/model/Buch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_a01_Bibliothek/src/model/Dvd.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_a01_Bibliothek/src/model/Kunde.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_a01_Bibliothek/src/model/Medium.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_a01_Bibliothek/src/model/Mitarbeiter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_a01_Bibliothek/src/model/Person.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="35yKb0TY4QpGxgWBSBbp2ReT2w6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Launcher.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.zahlenraten.Launcher" />
+      <module name="zahlenraten" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.zahlenraten.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="_a02_ZahlenratenFX" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="_a02_ZahlenratenFX" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Launcher" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="35e0fa38-a0d5-49a7-ac92-da5596315b33" name="Changes" comment="" />
+      <created>1764076941190</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764076941190</updated>
+    </task>
+    <servers />
+  </component>
+</project>
