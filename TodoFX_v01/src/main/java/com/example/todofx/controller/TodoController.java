@@ -41,7 +41,8 @@ public class TodoController {
 
     @FXML
     void onSave(ActionEvent event) {
-
+        //dao.save(new Todo(...));
+        //refresh? neu laden?
     }
 
     @FXML
