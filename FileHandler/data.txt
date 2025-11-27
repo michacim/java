@@ -1,2 +1,4 @@
-Hallo guten Tag
-Schönes Wetter
+1,einkaufen
+2,sport
+3,essen
+4,einkaufen
