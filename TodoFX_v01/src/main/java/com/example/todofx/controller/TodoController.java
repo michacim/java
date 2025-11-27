@@ -6,10 +6,7 @@ import com.example.todofx.model.State;
 import com.example.todofx.model.Todo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.time.LocalDate;
@@ -42,7 +39,10 @@ public class TodoController {
     @FXML
     void onSave(ActionEvent event) {
         //dao.save(new Todo(...));
+        Todo todo = new Todo(taskField.getText(), deadlineField.getValue());
+        dao.save(todo);
         //refresh? neu laden?
+        tableView.getItems().setAll(dao.findAll());
     }
 
     @FXML
@@ -52,8 +52,24 @@ public class TodoController {
         taskCol.setCellValueFactory(new PropertyValueFactory<>("task"));//getTask()
         deadlineCol.setCellValueFactory(new PropertyValueFactory<>("deadline"));//getTask()
         stateCol.setCellValueFactory(new PropertyValueFactory<>("state"));//getTask()
+        tableView.getItems().setAll(dao.findAll());//RefreshTable
 
-        tableView.getItems().setAll(dao.findAll());
+    //-------------- ContextMenu --------------------
+        ContextMenu cm = new ContextMenu();
+        MenuItem deleteItem = new MenuItem("Delete");
+        cm.getItems().add(deleteItem);
+
+        deleteItem.setOnAction(e -> {
+            System.out.println("delete...");
+            Todo delTodo = tableView.getSelectionModel().getSelectedItem();
+            dao.deleteById(delTodo.getId());
+            tableView.getItems().setAll(dao.findAll());//refresh
+        });
+
+        tableView.setContextMenu(cm);
+
+
+
 
     }
 

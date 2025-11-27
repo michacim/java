@@ -32,6 +32,11 @@ public class Todo {
         this.task = task;
     }
 
+    public Todo(String task, LocalDate deadline) {
+        this.task = task;
+        this.deadline = deadline;
+    }
+
     public int getId() {
         return id;
     }
@@ -89,6 +94,10 @@ public class Todo {
         result = 31 * result + Objects.hashCode(deadline);
         result = 31 * result + Objects.hashCode(state);
         return result;
+    }
+
+    public static void info(){
+        System.out.println("Ein Todo besteht aus Task,Deadline und State");
     }
 
 

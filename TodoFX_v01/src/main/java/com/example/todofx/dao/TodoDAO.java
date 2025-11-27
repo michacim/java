@@ -8,4 +8,7 @@ public interface TodoDAO {
     void save(Todo todo);
 
     List<Todo> findAll();
+
+    void  deleteById(int id);
+
 }
