@@ -9,7 +9,7 @@ public class TodoFileDAO implements TodoDAO{
 
     @Override
     public void save(Todo todo) {
-
+        todo.setId(calculateNextId());
         FileHandler.writeText(todo);
     }
 
@@ -26,4 +26,13 @@ public class TodoFileDAO implements TodoDAO{
         //FIXME später
 
     }
+    private int calculateNextId() {
+        List<Todo> todos = findAll();
+        return todos.stream()
+                .mapToInt(Todo::getId)
+                .max()
+                .orElse(0) + 1;
+    }
+
+
 }
