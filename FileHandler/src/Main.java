@@ -35,36 +35,36 @@ class Todo{
 
 public class Main {
 
-    public static void writeText(String filename) throws IOException {
-        FileWriter fw = new FileWriter(filename,true);
-        Todo todo = new Todo(1,"einkaufen");
-        fw.write(todo.getId()+","+todo.task+"\n");
-        fw.close();
+    public static void writeText(String filename)  {
+        try (FileWriter fw = new FileWriter(filename,true)){// AutoClose
 
-    }
-    public static void readText(String filename) throws FileNotFoundException {
-        Scanner sc = new Scanner(new File(filename));
-        ArrayList<Todo> todos = new ArrayList<>();
-        while(sc.hasNext()){
-            String line = sc.nextLine();
-            String[] arr= line.split(",");
+            Todo todo = new Todo(1,"einkaufen");
+            fw.write(todo.getId()+","+todo.task+"\n");
 
-            Todo todo = new Todo( Integer.parseInt( arr[0])  ,arr[1]);
-            todos.add(todo);
-
-        }
-        sc.close();
-        System.out.println(todos);
-    }
-
-    public static void main(String[] args) {
-        System.out.println("write...");
-        try {
-            //writeText("data.txt");
-           readText("data.txt");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
+    }
+    public static void readText(String filename) {
+        try ( Scanner sc = new Scanner(new File(filename))) {
+            ArrayList<Todo> todos = new ArrayList<>();
+            while(sc.hasNext()){
+                String line = sc.nextLine();
+                String[] arr= line.split(",");
+                Todo todo = new Todo( Integer.parseInt( arr[0])  ,arr[1]);
+                todos.add(todo);
+            }
+            System.out.println(todos);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("write...");
+
+        //writeText("data.txt");
+        readText("data.txt");
     }
 }

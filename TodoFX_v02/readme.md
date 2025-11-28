@@ -12,3 +12,7 @@
 
 ## Aufgabe
 * implementiere TodoFileDAO die Methoden save und findALl
+
+
+## FixMe
+* id-Problem: höchste Id ermitteln und neu setzen für save-Todo
