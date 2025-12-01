@@ -23,7 +23,10 @@ public class TodoFileDAO implements TodoDAO{
 
     @Override
     public void deleteById(int id) {
-        //FIXME Aufgabe-> 
+        List<Todo> todos =findAll();
+        todos.removeIf(todo ->todo.getId()==id);
+        FileHandler.writeTodos(todos);
+
 
     }
     private int calculateNextId() {
