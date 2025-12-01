@@ -1,6 +1,7 @@
 package com.example.todofx.controller;
 
 import com.example.todofx.dao.TodoDAO;
+import com.example.todofx.dao.TodoDbDAO;
 import com.example.todofx.dao.TodoDummyDAO;
 import com.example.todofx.dao.TodoFileDAO;
 import com.example.todofx.model.State;
@@ -15,7 +16,9 @@ import java.time.LocalDate;
 public class TodoController {
 
    // private TodoDAO dao = new TodoDummyDAO();
-    private TodoDAO dao = new TodoFileDAO();
+  // private TodoDAO dao = new TodoFileDAO();
+   private TodoDAO dao = new TodoDbDAO();
+
     //----------------- Save -----------------------
     @FXML
     private TextField taskField;

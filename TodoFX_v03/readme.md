@@ -21,3 +21,4 @@
 
 ## FixMe
 * ~~id-Problem: höchste Id ermitteln und neu setzen für save-Todo~~
+* DB-Connection bei Programmende

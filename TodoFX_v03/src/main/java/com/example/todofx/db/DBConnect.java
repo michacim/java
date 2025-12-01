@@ -3,6 +3,7 @@ package com.example.todofx.db;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /*
 DBConnect als Singleton
@@ -18,6 +19,8 @@ public class DBConnect {
 
         try {
             con = DriverManager.getConnection(DB_URL);
+            createTable();
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -34,5 +37,22 @@ public class DBConnect {
 
     public Connection connect(){
         return  con;
+    }
+
+    private void createTable(){
+        try {
+            Statement st=  con.createStatement();
+            st.executeUpdate("""
+                    CREATE TABLE IF NOT EXISTS todo(
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        task TEXT NOT NULL,
+                        deadline TEXT NOT NULL,
+                        state TEXT NOT NULL
+                    
+                    )
+                    """);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
