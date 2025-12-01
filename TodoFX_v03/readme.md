@@ -17,6 +17,12 @@
   ~~1. aus List<Todo> löschen nach id~~ 
   ~~2. danach todo.csv neu schreiben~~
   ~~3. > keine Änderung im TodoController notwendig~~ 
+1. findAll() (TodoDbDAO) fertig implementieren
+    * PreparedStatement mit executeQuery
+    * Todo erzeugen
+    * Todo Werte schreiben t.setId(rs.getInt())
+    * an Liste hängen
+    * Liste zurückgeben
 
 
 ## FixMe
