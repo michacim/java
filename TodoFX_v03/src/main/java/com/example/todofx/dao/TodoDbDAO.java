@@ -10,13 +10,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TodoDbDAO implements TodoDAO{
+    private Connection con;
 
+    public TodoDbDAO(){
+         con =  DBConnect.getInstance().connect();
+    }
 
 
     @Override
     public void save(Todo todo) {
         try {
-            Connection con =  DBConnect.getInstance().connect();
+
             PreparedStatement st = con.prepareStatement(" INSERT INTO todo(task, deadline,state) VALUES(?,?,?) ");
             st.setString(1,todo.getTask());
             st.setString(2,todo.getDeadline().toString());
@@ -33,19 +37,10 @@ public class TodoDbDAO implements TodoDAO{
     public List<Todo> findAll() {
         List<Todo> todos = new ArrayList<>();
         try {
-            Connection con =  DBConnect.getInstance().connect();
+
             PreparedStatement ps = con.prepareStatement("SELECT * FROM todo");
             ResultSet rs=  ps.executeQuery();
-
-            while(rs.next()){
-                Todo todo = new Todo();
-                todo.setId(rs.getInt("id"));
-                todo.setTask(rs.getString("task"));
-                todo.setDeadline(LocalDate.parse(rs.getString("deadline")));
-                todo.setState(State.valueOf(rs.getString("state")));
-                todos.add(todo);
-            }
-
+            createList(rs, todos);
 
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -54,10 +49,21 @@ public class TodoDbDAO implements TodoDAO{
         return todos;
     }
 
+    private static void createList(ResultSet rs, List<Todo> todos) throws SQLException {
+        while(rs.next()){
+            Todo todo = new Todo();
+            todo.setId(rs.getInt("id"));
+            todo.setTask(rs.getString("task"));
+            todo.setDeadline(LocalDate.parse(rs.getString("deadline")));
+            todo.setState(State.valueOf(rs.getString("state")));
+            todos.add(todo);
+        }
+    }
+
     @Override
     public void deleteById(int id) {
         try {
-            Connection con =  DBConnect.getInstance().connect();
+
             PreparedStatement st = con.prepareStatement("DELETE FROM todo WHERE id = ?");
             st.setInt(1,id);
             st.executeUpdate();
