@@ -1,5 +1,7 @@
 package server;
 
+import model.Message;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -28,8 +30,8 @@ public class Server {
             try {
                 ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
                 ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
-                String msg = String.valueOf(in.readObject());
-                out.writeObject(msg.toUpperCase()); // Response to Client
+                Message msg = (Message) in.readObject();
+                out.writeObject("Antwort vom Server: "+msg); // Response to Client
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
