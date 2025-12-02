@@ -1,13 +1,18 @@
 package com.example.todofx.dao;
 
 import com.example.todofx.db.DBConnect;
+import com.example.todofx.model.State;
 import com.example.todofx.model.Todo;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TodoDbDAO implements TodoDAO{
+
+
+
     @Override
     public void save(Todo todo) {
         try {
@@ -26,27 +31,27 @@ public class TodoDbDAO implements TodoDAO{
 
     @Override
     public List<Todo> findAll() {
-        ArrayList<Todo> list = new ArrayList<>();
-        //
+        List<Todo> todos = new ArrayList<>();
         try {
             Connection con =  DBConnect.getInstance().connect();
-            PreparedStatement ps = con.prepareStatement("hier sql");
-           ResultSet rs = ps.executeQuery();
-           // in while-Schleife Todos erzeugen und an ArrayListe bringen
-            while (rs.next()){
-                Todo t = new Todo();
-                t.setId(rs.getInt("id"));
-                //alle werte setzen
-                //
-                list.add(t);
+            PreparedStatement ps = con.prepareStatement("SELECT * FROM todo");
+            ResultSet rs=  ps.executeQuery();
 
+            while(rs.next()){
+                Todo todo = new Todo();
+                todo.setId(rs.getInt("id"));
+                todo.setTask(rs.getString("task"));
+                todo.setDeadline(LocalDate.parse(rs.getString("deadline")));
+                todo.setState(State.valueOf(rs.getString("state")));
+                todos.add(todo);
             }
-        } catch (SQLException e) {
+
+
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
-
-        return list;
+        return todos;
     }
 
     @Override

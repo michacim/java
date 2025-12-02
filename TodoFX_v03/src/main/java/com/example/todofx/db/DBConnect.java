@@ -12,6 +12,7 @@ public class DBConnect {
 
 
     private static final String DB_URL ="jdbc:sqlite:todo.db";
+    //private static final String DB_URL ="jdbc:mysql://localhost:3306/todo_db"; -mysql
     private static DBConnect instance = null;
     private Connection con;
 
