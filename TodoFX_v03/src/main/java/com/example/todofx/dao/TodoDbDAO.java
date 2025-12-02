@@ -56,6 +56,14 @@ public class TodoDbDAO implements TodoDAO{
 
     @Override
     public void deleteById(int id) {
+        try {
+            Connection con =  DBConnect.getInstance().connect();
+            PreparedStatement st = con.prepareStatement("DELETE FROM todo WHERE id = ?");
+            st.setInt(1,id);
+            st.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }
