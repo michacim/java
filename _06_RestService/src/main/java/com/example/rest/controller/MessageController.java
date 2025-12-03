@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /*
+- Presentation- Layer
 - Definiert URLs und mapped diese auf Methoden
 - definiert HTTP-Methoden: get, post, put, delete
  */
