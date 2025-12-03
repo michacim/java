@@ -4,6 +4,7 @@ import com.example.rest.model.Message;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 @Service   // für @Autowired
 public class MessageServiceImpl implements MessageService{
@@ -55,11 +56,13 @@ public class MessageServiceImpl implements MessageService{
 
     @Override
     public List<Message> getReverseList() {
-        return List.of();
+        return Collections.emptyList();
     }
 
     @Override
     public Message getRandomMessage() {
+        Collections.shuffle(messages);
+
         return null;
     }
 }
