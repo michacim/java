@@ -16,6 +16,7 @@ public class Client {
             ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
             System.out.println("Client schreibt...");
             out.writeObject(new Message(1,"Hallo Server"));
+           // out.writeObject("Hallo");
             System.out.println(in.readObject());
         } catch (Exception e) {
             throw new RuntimeException(e);

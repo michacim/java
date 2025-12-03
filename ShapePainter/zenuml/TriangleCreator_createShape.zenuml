@@ -1,0 +1,24 @@
+            // Generated from Java method: com.example.shape_painter.factory.TriangleCreator.createShape
+            // This is an experimental feature. Please report issues to https://github.com/ZenUml/jetbrains-zenuml/discussions
+            
+            TriangleCreator.createShape() {
+  double x = randomX()
+  randomX()
+  return rnd.nextDouble(20, Math.max(40, canvas.getWidth() - 20))
+  rnd.nextDouble(20, Math.max(40, canvas.getWidth() - 20))
+  double y = randomY()
+  randomY()
+  return rnd.nextDouble(20, Math.max(40, canvas.getHeight() - 20))
+  rnd.nextDouble(20, Math.max(40, canvas.getHeight() - 20))
+  double size = rnd.nextDouble(30, 70)
+  rnd.nextDouble(30, 70)
+  Polygon triangle = new Polygon(
+                x, y - size / 2,
+                x - size / 2, y + size / 2,
+                x + size / 2, y + size / 2
+        )
+  new Polygon(x, y - size / 2, x - size / 2, y + size / 2, x + size / 2, y + size / 2)
+  triangle.setFill(Color.color(rnd.nextDouble(), rnd.nextDouble(), rnd.nextDouble(), 0.6))
+  triangle.setStroke(Color.BLACK)
+  return triangle
+}

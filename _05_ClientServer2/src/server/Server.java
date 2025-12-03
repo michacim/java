@@ -30,7 +30,13 @@ public class Server {
             try {
                 ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
                 ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
-                Message msg = (Message) in.readObject();
+                Object obj = in.readObject();
+                if (! (obj instanceof Message)){
+                    System.out.println("kein Message-Objekt!");
+                    return;
+                }
+                Message msg = (Message) obj;
+
                 out.writeObject("Antwort vom Server: "+msg); // Response to Client
             } catch (Exception e) {
                 throw new RuntimeException(e);

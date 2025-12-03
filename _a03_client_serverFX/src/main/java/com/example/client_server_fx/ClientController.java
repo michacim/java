@@ -15,7 +15,9 @@ public class ClientController {
 
     @FXML
     void onSend(ActionEvent event) {
-        Client.sendMessage("");
+
+       String response = Client.sendMessage(nameField.getText());
+       responseField.setText(response);
     }
 
 }
