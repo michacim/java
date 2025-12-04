@@ -18,6 +18,7 @@ public class MessageServiceImpl implements MessageService{
         messages.add(new Message(4,"hallo Max"));
         messages.add(new Message(5,"guten Abend"));
         messages.add(new Message(6,"hallo Welt"));
+
     }
 
 
@@ -46,23 +47,34 @@ public class MessageServiceImpl implements MessageService{
     //Aufgabe
     @Override
     public List<Message> getByMessageText(String text) {
-        return List.of();
+        List<Message> results = new ArrayList<>();
+        for(Message m: messages){
+
+            if(m.getText().toLowerCase().contains(text.toLowerCase())){
+                results.add(m);
+            }
+
+        }
+        return results;
     }
 
     @Override
     public Message getLastMessage() {
-        return null;
+        return messages.get(messages.size()-1);
     }
 
     @Override
     public List<Message> getReverseList() {
-        return Collections.emptyList();
+        ArrayList<Message> copy = new ArrayList<>(messages);
+        Collections.reverse(copy);
+        return copy;
     }
 
     @Override
     public Message getRandomMessage() {
-        Collections.shuffle(messages);
+        Collections.shuffle(messages);//oder new Random().nextInt(...)
 
-        return null;
+        return messages.get(0);
     }
+
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /*
+- Endpoint
 - Presentation- Layer
 - Definiert URLs und mapped diese auf Methoden
 - definiert HTTP-Methoden: get, post, put, delete
@@ -30,7 +31,28 @@ public class MessageController {
 
     @GetMapping("/m")//http://localhost:8080/messages/m?id=2
     public Message getById(@RequestParam(name = "id") int id){
-        return service.getById(id);
-    }
+        //public ResponseEntity(Message) getById(...
+        Message m= service.getById(id);
 
+        if(m==null){
+           return new Message(-1,"not found");
+        }
+        return m;
+    }
+    @GetMapping("/text")//http://localhost:8080/messages/text?t=ha
+    public List<Message> getByMessageText(@RequestParam(name = "t") String text){
+        return service.getByMessageText(text);
+    }
+    @GetMapping("/last")
+    public Message getLastMessage() {
+        return service.getLastMessage();
+    }
+    @GetMapping("/reverse")
+    public List<Message> getReverseList() {
+        return service.getReverseList();
+    }
+    @GetMapping("/random")
+    public Message getRandomMessage() {
+      return  service.getRandomMessage();
+    }
 }
